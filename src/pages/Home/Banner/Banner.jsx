@@ -20,9 +20,14 @@ const Banner = () => {
              MongoDB, Express.js, React, and Node.js for seamless user experiences.
           </p>
 
-          <button className="mt-8 px-6 py-3 bg-red-400 text-white rounded-md shadow-md hover:bg-red-500 transition">
-            Learn More
-          </button>
+        <a 
+        href="https://github.com/taposh25" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="mt-8 inline-block px-6 py-3 bg-red-400 text-white rounded-md shadow-md hover:bg-red-500 transition cursor-pointer"
+      >
+        Learn More
+      </a>
         </div>
 
         {/* Right Image */}

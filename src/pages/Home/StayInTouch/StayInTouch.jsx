@@ -1,29 +1,30 @@
 
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
+import { useForm } from 'react-hook-form'; 
 
 const StayInTouch = () => {
-  const form = useRef();
   const [status, setStatus] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const sendEmail = (e) => {
-    e.preventDefault();
+  
+  const { register, handleSubmit, reset, formState: { errors } } = useForm();
+
+
+  const onSubmit = (data) => {
     setLoading(true);
     setStatus("");
 
-    // EmailJS দিয়ে ইমেইল পাঠানো
-    emailjs.sendForm(
+    emailjs.send(
       import.meta.env.VITE_SERVICE_ID,   
       import.meta.env.VITE_TEMPLATE_ID,  
-      form.current,
+      data, 
       import.meta.env.VITE_PUBLIC_KEY    
     )
     .then((result) => {
-        console.log("Success:", result.text);
         setStatus("Thank you! You have successfully subscribed.");
         setLoading(false);
-        e.target.reset(); 
+        reset(); 
     }, (error) => {
         console.log("Error:", error.text);
         setStatus("Sorry, please try again.");
@@ -38,26 +39,40 @@ const StayInTouch = () => {
         Keep in touch with my latest project updates.
       </p>
 
-      <form ref={form} onSubmit={sendEmail} className="flex flex-col md:flex-row justify-center items-center gap-4 px-4">
-        <input 
-          type="email" 
-          name="user_email" 
-          placeholder="Enter your email address"
-          required
-          className="w-full md:w-96 px-4 py-3 border border-red-200 bg-[#eff6ff] rounded-md focus:outline-none focus:border-[#f26457]"
-        />
+     
+      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col md:flex-row justify-center items-center gap-4 px-4 max-w-xl mx-auto">
+        <div className="w-full relative">
+          <input 
+            type="email" 
+            placeholder="Enter your email address"
+            {...register("user_email", { 
+              required: "Email is required",
+              pattern: { value: /^\S+@\S+$/i, message: "Please enter a valid email" }
+            })}
+            className={`w-full px-4 py-3 border rounded-md focus:outline-none transition-all duration-300
+              ${errors.user_email ? "border-red-500" : "border-red-200 focus:border-[#f26457]"} 
+              bg-[#eff6ff] text-gray-800 placeholder-gray-500`} 
+          />
+         
+          {errors.user_email && (
+            <p className="text-red-500 text-xs text-left absolute -bottom-5 left-1">
+              {errors.user_email.message}
+            </p>
+          )}
+        </div>
+
         <button 
           type="submit" 
           disabled={loading}
-          className="bg-[#f26457] text-white px-10 py-3 rounded-md font-semibold hover:bg-[#d95349] transition-all disabled:bg-gray-400"
+          className="bg-[#f26457] text-white px-10 py-3 rounded-md font-semibold hover:bg-[#d95349] transition-all disabled:bg-gray-400 cursor-pointer whitespace-nowrap"
         >
           {loading ? "Sending..." : "Subscribe"}
         </button>
       </form>
-
-     
+      
+    
       {status && (
-        <p className={`mt-4 font-medium ${status.includes("Thank you") ? "text-green-600" : "text-red-500"}`}>
+        <p className={`mt-8 font-medium ${status.includes("Thank you") ? "text-green-600" : "text-red-500"}`}>
           {status}
         </p>
       )}

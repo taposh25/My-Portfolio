@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import PankajImage from "../../../assets/image.png";
 
 const Clients = () => {
   const [visible, setVisible] = useState(false);
@@ -24,18 +25,18 @@ const Clients = () => {
 
   const clients = [
     {
-      name: "John Doe",
-      img: "https://i.pravatar.cc/100?img=1",
+      name: "Pankaj Mallick",
+      img: PankajImage,
       desc: "Amazing developer! Delivered project on time with perfect UI design.",
     },
     {
-      name: "Sarah Khan",
-      img: "https://i.pravatar.cc/100?img=2",
+      name: "Md. Mohoiminul Islam Chowdhury",
+      img: "https://lh3.googleusercontent.com/a-/ALV-UjVhxCV2df9VAl9B7oJXDvjXKO-q65BmqvljxtMhFA2NfNICQIM=s75-c",
       desc: "Very professional and skilled. Highly recommended for web projects.",
     },
     {
-      name: "Michael Lee",
-      img: "https://i.pravatar.cc/100?img=3",
+      name: "Mr. Montaser Abdul Quader",
+      img: "https://lh3.googleusercontent.com/a-/ALV-UjUpdMc2mSpHEeuK5yKc5CpJpXYa_wJPN1wosce5B7CtG8hYsEf6=s75-c",
       desc: "Great communication and clean code. Loved working with him.",
     },
   ];
@@ -48,11 +49,11 @@ const Clients = () => {
       {/* Title */}
       <div className="text-center mb-14">
         <h2 className="text-4xl font-bold text-gray-800">
-          What My Clients Says
+          What My HR Says
         </h2>
 
         <p className="text-gray-500 mt-6 ">
-          Here is what some of my happy clients say about my work and experience
+          Here is what some of my happy HR say about my work and experience
         </p>
 
         <div className="w-20 h-1 bg-red-500 mx-auto  mt-6 rounded-full"></div>

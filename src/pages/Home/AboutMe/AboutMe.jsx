@@ -1,6 +1,10 @@
 import React from "react";
 import about from "../../../assets/about.jpg";
+import { useNavigate } from "react-router";
+
+
 const AboutMe = () => {
+  const navigate = useNavigate();
   return (
     <section className="bg-white px-6 lg:px-20 py-20">
       {/* Heading */}
@@ -33,9 +37,12 @@ const AboutMe = () => {
            Motivated and detail-oriented Full-Stack Developer with strong skills in Tailwind CSS, React.Js, Node.Js, Express.Js, Firebase and MongoDB, seeking a position as a Full-Stack Developer or remote job where I can show my skills to build responsive, user-friendly web applications and contribute to a dynamic team environment.
           </p>
 
-          <button className="mt-8 px-6 py-3 bg-red-400 text-white rounded-md shadow-md hover:bg-red-500 transition">
-            Contact Me
-          </button>
+      <button 
+      onClick={() => navigate("/contact")} // ৩. এখানেও 'n' ছোট হাতের হবে
+      className="mt-8 px-6 py-3 bg-red-400 text-white rounded-md shadow-md hover:bg-red-500 transition cursor-pointer"
+    >
+      Contact Me
+    </button>
         </div>
 
         {/* Right Image */}

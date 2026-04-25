@@ -1,5 +1,6 @@
 import React from "react";
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
+import { NavLink } from "react-router";
 
 const Footer = () => {
   return (
@@ -24,10 +25,56 @@ const Footer = () => {
         <div>
           <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
           <ul className="space-y-2 text-gray-400">
-            <li className="hover:text-white cursor-pointer transition">Home</li>
-            <li className="hover:text-white cursor-pointer transition">About</li>
-            <li className="hover:text-white cursor-pointer transition">Projects</li>
-            <li className="hover:text-white cursor-pointer transition">Contact</li>
+          <li>
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              `cursor-pointer transition duration-300 ${
+                isActive ? "text-white font-bold" : "text-gray-400 hover:text-white"
+              }`
+            }
+          >
+            Home
+          </NavLink>
+        </li>
+          <li>
+          <NavLink
+            to="/about"
+            className={({ isActive }) =>
+              `cursor-pointer transition duration-300 ${
+                isActive ? "text-white font-bold" : "text-gray-400 hover:text-white"
+              }`
+            }
+          >
+            About
+          </NavLink>
+        </li>
+
+           <li>
+          <NavLink
+            to="/projects"
+            className={({ isActive }) =>
+              `cursor-pointer transition duration-300 ${
+                isActive ? "text-white font-bold" : "text-gray-400 hover:text-white"
+              }`
+            }
+          >
+            Projects
+          </NavLink>
+        </li>
+            
+               <li>
+          <NavLink
+            to="/contact"
+            className={({ isActive }) =>
+              `cursor-pointer transition duration-300 ${
+                isActive ? "text-white font-bold" : "text-gray-400 hover:text-white"
+              }`
+            }
+          >
+            Contact
+          </NavLink>
+        </li>
           </ul>
         </div>
 
