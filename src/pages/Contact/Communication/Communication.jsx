@@ -11,12 +11,12 @@ const Communication = () => {
       {/* Content Area */}
       <div className="text-center z-10">
         {/* Subtitle (Optional, looks professional) */}
-        <p className="text-[#f26457] uppercase tracking-[0.3em] text-sm font-semibold mb-2">
-          Get in touch
+        <p className="text-[#f26457] uppercase tracking-[0.3em] text-sm font-bold mb-2">
+          Please Feel Free To
         </p>
         
         <h1 className="text-5xl md:text-7xl font-extrabold text-white tracking-tight">
-          Contact
+          Contact Me
         </h1>
 
         {/* Dynamic Red Line */}

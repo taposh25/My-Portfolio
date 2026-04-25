@@ -1,51 +1,51 @@
 import React from "react";
 import { FaGithub } from "react-icons/fa";
 import { FiExternalLink } from "react-icons/fi";
+import tradeImg from "../../../../assets/TradeNest.JPG";
 
 const featuredProjects = [
   {
-    title: "E-Commerce Dashboard",
+    title: "School Management System",
     category: "Web App",
     description:
       "A modern dashboard with analytics, order tracking, and customer management.",
-    tech: ["React", "Tailwind", "Firebase"],
+    tech: ["React", "Tailwind", "Firebase", "Node.js", "MongoDB", "Express"],
     image:
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
-    liveLink: "#",
-    codeLink: "#",
+    liveLink: "https://school-system-bb33d.web.app/",
+    codeLink: "https://github.com/taposh25/school-management-system-client",
   },
   {
-    title: "Portfolio Website",
+    title: "Matrimony Platform",
     category: "Personal Brand",
     description:
       "A responsive portfolio to showcase projects and professional identity.",
-    tech: ["React", "Framer Motion", "CSS"],
+    tech: ["React", "Node.js", "MongoDB","Express", "Tailwind", "Socket.io"],
     image:
       "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
-    liveLink: "#",
-    codeLink: "#",
+    liveLink: "https://frontend-three-woad-37.vercel.app/",
+    codeLink: "https://frontend-three-woad-37.vercel.app/",
   },
   {
-    title: "Real Estate Platform",
+    title: "Book Courier Service",
     category: "Business Solution",
     description:
       "A property listing platform with search, filtering, and inquiry system.",
-    tech: ["React", "Node.js", "MongoDB"],
+    tech: ["React", "Node.js", "MongoDB","Express", "Tailwind", "Stripe"],
     image:
-      "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=80",
-    liveLink: "#",
-    codeLink: "#",
+      "https://bfcpublications.com/blog/wp-content/uploads/2025/08/Rabindranath-Tagore-Books-1024x576.webp",
+    liveLink: "https://book-courier-service.web.app/",
+    codeLink: "https://github.com/taposh25/Book-Courier-Client",
   },
   {
-    title: "Task Management App",
+    title: "Trade Nest Application",
     category: "Productivity",
     description:
       "A collaborative productivity app for managing daily tasks and projects.",
-    tech: ["React", "Redux", "Tailwind"],
-    image:
-      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80",
-    liveLink: "#",
-    codeLink: "#",
+    tech: ["React", "Stripe", "Node.js", "MongoDB", "Express", "Tailwind"],
+    image: tradeImg,
+    liveLink: "https://trade-nest-8c857.web.app/",
+    codeLink: "https://github.com/taposh25/Trade-Next-Client",
   },
 ];
 
@@ -66,7 +66,7 @@ const FeaturedProjects = () => {
               <img
                 src={project.image}
                 alt={project.title}
-                className="h-56 w-full object-cover group-hover:scale-110 transition-transform duration-500"
+                className="h-56 w-full  object-cover group-hover:scale-110 transition-transform duration-500 "
               />
             </div>
 
@@ -85,7 +85,7 @@ const FeaturedProjects = () => {
                 {project.tech.map((item, idx) => (
                   <span
                     key={idx}
-                    className="px-3 py-1 text-sm bg-white rounded-full shadow-sm"
+                    className="px-3 py-1 text-sm text-slate-500 hover:text-sky-500 bg-white rounded-full shadow-sm"
                   >
                     {item}
                   </span>
