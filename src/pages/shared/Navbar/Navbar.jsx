@@ -9,7 +9,7 @@ const Navbar = () => {
         `font-semibold transition-all duration-300 rounded-xl px-4 py-2 ${
             isActive
                 ? "bg-red-500 text-white shadow-md"
-                : "text-gray-700 hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500 hover:text-white hover:shadow-lg"
+                : "text-gray-400 hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500 hover:text-white hover:shadow-lg"
         }`;
 
     const links = (
@@ -22,7 +22,7 @@ const Navbar = () => {
     );
 
     return (
-        <div className="navbar bg-base-100 shadow-sm pt-5">
+        <div className="navbar bg-base-100 shadow-sm pt-5 pb-5">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
