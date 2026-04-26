@@ -29,7 +29,7 @@ const Skills = () => {
           </button> */}
 
         <a
-        href="/public/(CV)-TAPOSH.pdf"
+        href="/CV-TAPOSH.pdf"
         target="_blank"
         className="bg-[#f26457] text-white font-semibold py-3 px-8 rounded shadow-md hover:bg-[#d95349] transition-all w-fit mt-4 inline-block"
         >
